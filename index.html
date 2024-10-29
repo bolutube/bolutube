@@ -1,0 +1,77 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Mundo - Arte Surrealista</title>
+  <style>
+    /* Fondo psicodélico en degradado */
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #FFAFBD, #ffc3a0, #ff8c94, #69c3c8);
+      background-size: 400% 400%;
+      font-family: Arial, sans-serif;
+      animation: backgroundChange 15s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    /* Títulos y textos */
+    h1 {
+      font-size: 4em;
+      color: #E1FF00;
+      text-shadow: 0 0 20px #00FFFF, 0 0 30px #FF00FF, 0 0 40px #00FFFF;
+      animation: neonGlow 3s ease infinite alternate;
+    }
+
+    /* Animaciones surrealistas */
+    @keyframes backgroundChange {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    @keyframes neonGlow {
+      0% { text-shadow: 0 0 10px #FF00FF, 0 0 20px #00FFFF, 0 0 30px #FF00FF; }
+      100% { text-shadow: 0 0 20px #00FFFF, 0 0 30px #FF00FF, 0 0 40px #00FFFF; }
+    }
+
+    /* Efecto de burbujas surrealistas */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      animation: floatBubble 10s ease-in infinite;
+    }
+
+    @keyframes floatBubble {
+      0% { transform: scale(0.5) translateY(0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: scale(1.2) translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Hola Mundo Surrealista!</h1>
+
+  <!-- Generador de burbujas dinámico -->
+  <script>
+    const numBubbles = 30;
+    for (let i = 0; i < numBubbles; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      bubble.style.width = `${Math.random() * 60 + 20}px`;
+      bubble.style.height = bubble.style.width;
+      bubble.style.left = `${Math.random() * 100}vw`;
+      bubble.style.bottom = `-${Math.random() * 20}px`;
+      bubble.style.animationDuration = `${Math.random() * 8 + 6}s`;
+      bubble.style.animationDelay = `${Math.random() * 5}s`;
+      document.body.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>
